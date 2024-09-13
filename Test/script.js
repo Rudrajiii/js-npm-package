@@ -1,5 +1,5 @@
 // File: Test/script.js
-const { $set , set_internals , map_internals , filter_internals} = require('../package/index');
+const { $set , set_internals , map_internals , filter_internals , reduce_internals} = require('../package/index');
 
 // Create an instance of the class
 const mySet = new $set();
@@ -19,3 +19,4 @@ console.log(typeof arrays2 , arrays2); // Expected output: [[1, 2], [2, 4], [3, 
 
 console.log(map_internals());
 console.log(filter_internals());
+console.log(reduce_internals());

@@ -16,6 +16,7 @@ run_test() {
 # Run the test files
 run_test "test_map.js"
 run_test "test_filter.js"
+run_test "test_reduce.js"
 
 
 echo "All tests completed!➡️"
