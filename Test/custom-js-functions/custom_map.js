@@ -2,7 +2,7 @@
 /**
  * Array.prototype.map() - Creates a new array with the results of calling a provided function on every element in the calling array.
  * The "map()" method executes a provided function once for each array element and constructs a new array from the results. It does not execute the function for empty elements. This method returns a new array and does not modify the original array.
- * syntax:
+ * @syntax :
  * @array.map(callback(currentValue, index, array), thisArg);
 
  * @callback: A function that is called for every element of the array. It takes three arguments:
@@ -13,6 +13,8 @@
  * @returns:
  * A new array with each element being the result of the callback function.
 **/
+const __call = require('./_call');
+
 Array.prototype.__push = function(element) {
     this[this.length] = element;
     return this.length;
@@ -22,7 +24,7 @@ Array.prototype.__map = function(callback, context) {
     const temp = [];
 
     for (let i = 0; i < this.length; i++) {
-        const result = callback.call(context, this[i], i, this); 
+        const result = callback.__call(context, this[i], i, this); 
         temp.__push(result);
     }
     return temp;
