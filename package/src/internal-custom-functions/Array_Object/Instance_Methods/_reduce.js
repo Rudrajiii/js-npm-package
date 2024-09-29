@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const __call = require('./_call');
+const __call = require('../Static_Methods/_call');
 Array.prototype.__reduce = function(callback, initialValue, context) {
     let accumulator = initialValue;
     let startIndex = 0;

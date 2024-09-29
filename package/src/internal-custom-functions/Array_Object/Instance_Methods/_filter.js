@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const __call = require('./_call');
+const __call = require('../Static_Methods/_call');
 Array.prototype.__push = function(element) {
     this[this.length] = element;
     return this.length;

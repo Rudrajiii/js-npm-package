@@ -1,5 +1,13 @@
 // File: Test/script.js
-const { $set , set_internals , map_internals , filter_internals , reduce_internals , call_internals} = require('../package/index');
+const    { 
+            $set ,
+            set_internals ,
+            map_internals ,
+            filter_internals , 
+            reduce_internals , 
+            call_internals,
+            apply_internals
+    } = require('../package/index');
 
 // Create an instance of the class
 const mySet = new $set();
@@ -28,9 +36,21 @@ const person = { name: "Alice" };
 // Using the custom __call method
 greet.$call(person, "Hello", "!");
 
+function greet(greeting, punctuation) {
+    console.log(greeting + ', ' + this.name + punctuation);
+}
+
+greet.$apply(person, ['Hello', '!']);
+
+const array = [1, 2, 3, 4];
+
+const max = Math.max.$apply(null, array);
+console.log(max);  // Output: 4
+
 
 console.log(total);
 console.log(map_internals());
 console.log(filter_internals());
 console.log(reduce_internals());
 console.log(call_internals());
+console.log(apply_internals());
