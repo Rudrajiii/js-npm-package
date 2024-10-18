@@ -19,6 +19,7 @@ run_test "test_filter.js"
 run_test "test_reduce.js"
 run_test "test_call.js"
 run_test "test_apply.js"
+run_test "test_from.js"
 
 
 echo "All tests completed!➡️"

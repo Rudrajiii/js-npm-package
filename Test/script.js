@@ -6,7 +6,9 @@ const    {
             filter_internals , 
             reduce_internals , 
             call_internals,
-            apply_internals
+            apply_internals,
+            from_internals
+            
     } = require('../package/index');
 
 // Create an instance of the class
@@ -48,9 +50,17 @@ const max = Math.max.$apply(null, array);
 console.log(max);  // Output: 4
 
 
+console.log(Array.from('foo'));
+// Expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], (x) => x + x));
+
+console.log('custom from :',Array.$from([1, 2, 3], (x) => x + x));
+
 console.log(total);
 console.log(map_internals());
 console.log(filter_internals());
 console.log(reduce_internals());
 console.log(call_internals());
 console.log(apply_internals());
+console.log(from_internals());

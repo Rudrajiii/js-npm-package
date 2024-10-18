@@ -4,10 +4,13 @@ const CustomFilter = require('./src/internal-custom-functions/Array_Object/Insta
 const CustomReduce = require('./src/internal-custom-functions/Array_Object/Instance_Methods/_reduce');
 const CustomCall = require('./src/internal-custom-functions/Array_Object/Static_Methods/_call');
 const CustomApply = require('./src/internal-custom-functions/Array_Object/Static_Methods/_apply');
+const CustomFrom = require('./src/internal-custom-functions/Array_Object/Static_Methods/_from')
 
 Array.prototype.$map = CustomMap.__map;
 Array.prototype.$filter = CustomFilter.__filter;
 Array.prototype.$reduce = CustomReduce.__reduce;
+Function.prototype.$from = CustomFrom.__from;
+
 
 Function.prototype.$call = CustomCall.__call;
 Function.prototype.$apply = CustomApply.__apply;
@@ -19,7 +22,8 @@ module.exports = {
   filter_internals : CustomFilter.filter_internals,
   reduce_internals : CustomReduce.reduce_internals,
   call_internals : CustomCall.call_internals,
-  apply_internals : CustomApply.apply_internals
+  apply_internals : CustomApply.apply_internals,
+  from_internals : CustomFrom.from_internals
 };
 
 
