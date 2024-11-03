@@ -19,7 +19,7 @@ Function.prototype.$from = CustomFrom.__from;
 Function.prototype.$call = CustomCall.__call;
 Function.prototype.$apply = CustomApply.__apply;
 Function.prototype.$isArray = CustomIsArray.__isArray;
-Function.prototype.$of = CustomOf.__isArray;
+Function.prototype.$of = CustomOf.__of;
 
 //export all codes of custom function
 module.exports = {
