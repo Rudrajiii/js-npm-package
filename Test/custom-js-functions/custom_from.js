@@ -3,9 +3,12 @@
  * The "__from()" method takes an array-like or iterable object and creates a new array 
  * containing the elements of the input. It also supports an optional mapping function 
  * that can be applied to each element.
- *
  * @syntax :
+ * 
  * @Array.__from(arrayLike[, mapFn[, thisArg]]);
+ * Array.from(arrayLike)
+ * Array.from(arrayLike, mapFn)
+ * Array.from(arrayLike, mapFn, thisArg)
  *
  * @arrayLike : The array-like or iterable object to convert to an array.
  * @mapFn : Optional. A mapping function to apply to each element. This function is called with
@@ -23,7 +26,7 @@
     if (typeof arrayLike === 'string') {
         return Array.from(arrayLike, (char) => {
             const num = Number(char);
-            return isNaN(num) ? char : num;
+            return isNaN(num) ? char : num; // Convert to number if possible
         });
     }
 
@@ -31,17 +34,17 @@
     const len = arrayLike.length;
 
     if (typeof len !== 'number' || len < 0 || len % 1 !== 0) {
-        return undefined;
+        return undefined; // Not an array-like object
     }
 
     const result = [];
     for (let i = 0; i < len; i++) {
-        // Ensures the index exists in the object
+        // Ensure the index exists in the object
         if (i in arrayLike) {
             const element = arrayLike[i];
-            result[i] = typeof mapFn === 'function' ? mapFn.__call(thisArg, element, i) : element;
+            // Use mapFn.call instead of mapFn.__call
+            result[i] = typeof mapFn === 'function' ? mapFn.call(thisArg, element, i) : element;
         }
     }
     return result;
-
 };

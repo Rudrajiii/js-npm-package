@@ -83,7 +83,7 @@ const tests = [
 
 // Run the tests
 tests.forEach(test => {
-    const result = test.input.$filter(test.callback, test.context);
+    const result = test.input.__filter(test.callback, test.context);
     if (arraysEqual(result, test.expected)) {
         console.log(`Passed Test${test.testNumber} ✅: ${test.description}`);
     } else {

@@ -1,4 +1,4 @@
-const { apply_internals } = require('../package/index'); 
+const {__apply} = require('../package/src/internal-custom-functions/Array_Object/Static_Methods/_apply') 
 const assert = require('assert');
 
 // Helper function for deep equality comparison

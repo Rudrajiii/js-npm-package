@@ -1,4 +1,4 @@
-const { call_internals } = require('../package/index');
+const { __call } = require('../package/src/internal-custom-functions/Array_Object/Static_Methods/_call');
 
 function deepEqual(obj1, obj2) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
@@ -93,7 +93,7 @@ tests.forEach(test => {
     let result;
     let errorOccurred = false;
     try {
-        result = test.func.$call(test.context, ...test.args);
+        result = test.func.__call(test.context, ...test.args);
     } catch (error) {
         if (test.expectedError) {
             errorOccurred = true;

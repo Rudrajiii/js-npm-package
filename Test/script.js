@@ -7,7 +7,8 @@ const    {
             reduce_internals , 
             call_internals,
             apply_internals,
-            from_internals
+            from_internals,
+            isArray_internals
             
     } = require('../package/index');
 
@@ -19,7 +20,11 @@ mySet.add(2);
 console.log(mySet);
 
 const numbers = [1,2,3]
+
 const r = numbers.$filter( n => n > 2);
+
+
+
 console.log(r);
 
 const arrays = numbers.$map(num => [num, num * 2]);
@@ -58,9 +63,15 @@ console.log(Array.from([1, 2, 3], (x) => x + x));
 console.log('custom from :',Array.$from([1, 2, 3], (x) => x + x));
 
 console.log(total);
+const h = 'p';
+console.log(Array.$isArray(h))
+const yujin = '[]';
+console.log(Array.$isArray(yujin));
+
 console.log(map_internals());
 console.log(filter_internals());
 console.log(reduce_internals());
 console.log(call_internals());
 console.log(apply_internals());
 console.log(from_internals());
+console.log(isArray_internals());

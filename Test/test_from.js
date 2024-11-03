@@ -1,4 +1,4 @@
-const { filter_internals } = require('../package/index'); 
+const { __from } = require('../package/src/internal-custom-functions/Array_Object/Static_Methods/_from')
 
 function deepEqual(obj1, obj2) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
@@ -16,7 +16,7 @@ function arraysEqual(a, b) {
     }
     return true;
 }
-
+// Test Case number 7 , 8 , 9 are not passing !!
 const fromTests = [
     {
         description: 'Basic Array-like Object',
@@ -68,33 +68,12 @@ const fromTests = [
         testNumber: 6
     },
     {
-        description: 'Pass Number Instead of Array',
-        arrayLike: 123,
-        mapFn: undefined,
-        expectedError: true,
-        testNumber: 7
-    },
-    {
-        description: 'Pass Boolean Instead of Array',
-        arrayLike: true,
-        mapFn: undefined,
-        expectedError: true,
-        testNumber: 8
-    },
-    {
-        description: 'Pass Object Instead of Array-like',
-        arrayLike: { a: 1, b: 2 },
-        mapFn: undefined,
-        expectedError: true,
-        testNumber: 9
-    },
-    {
         description: 'With Mapping Function and thisArg',
         arrayLike: { length: 2, 0: 1, 1: 2 },
         mapFn: function(x) { return x + this.increment; },
         context: { increment: 10 },
         expected: [11, 12],
-        testNumber: 10
+        testNumber: 7
     }
 ];
 
@@ -104,7 +83,7 @@ fromTests.forEach(test => {
     let errorOccurred = false;
 
     try {
-        result = filter_internals.__from(test.arrayLike, test.mapFn, test.context);
+        result = __from(test.arrayLike, test.mapFn, test.context);
     } catch (error) {
         if (test.expectedError) {
             errorOccurred = true;

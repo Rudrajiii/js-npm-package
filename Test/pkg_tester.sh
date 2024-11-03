@@ -20,6 +20,8 @@ run_test "test_reduce.js"
 run_test "test_call.js"
 run_test "test_apply.js"
 run_test "test_from.js"
+run_test "test_isArray.js"
+run_test "test_of.js"
 
 
 echo "All tests completed!➡️"

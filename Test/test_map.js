@@ -1,4 +1,5 @@
-const { map_internals } = require('../package/index'); 
+// const { map_internals } = require('../package/index'); 
+const { __map } = require('../package/src/internal-custom-functions/Array_Object/Instance_Methods/_map')
 function deepEqual(obj1, obj2) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
 }
@@ -90,7 +91,7 @@ const tests = [
 
 // Run the tests
 tests.forEach(test => {
-    const result = test.input.$map(test.callback, test.context);
+    const result = test.input.__map(test.callback, test.context);
     if (arraysEqual(result, test.expected)) {
         console.log(`Passed Test${test.testNumber} ✅: ${test.description}`);
     } else {
