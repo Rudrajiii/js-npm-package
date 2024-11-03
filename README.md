@@ -1,5 +1,10 @@
 
 ![github-header-image (2)](https://github.com/user-attachments/assets/5306de0f-8874-41cf-a71c-a72ea621a685)
+<p align="center">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge">
+  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm Badge">
+  <img src="https://img.shields.io/badge/version-1.0.0-green?style=for-the-badge" alt="Version Badge">
+</p>
 
 Welcome to the Custom JavaScript Functions package! This npm package provides custom implementations of built-in JavaScript functions, allowing users to understand how these functions work internally. This is especially useful for learning purposes and for those who want to see how common JavaScript functions can be replicated.
 
@@ -8,7 +13,7 @@ Welcome to the Custom JavaScript Functions package! This npm package provides cu
 - **Custom Implementations**: Each function in this package is a custom implementation that mimics the behavior of the native JavaScript functions.
 - **Educational**: The primary goal of this package is to provide an educational resource for developers to understand the inner workings of JavaScript functions.
 - **Polyfill-style Functions**: These implementations can serve as polyfills, helping developers use similar functionality in environments where certain features may not be available.
-- 
+
 ## Project Tree 🌳
 
 ```base
