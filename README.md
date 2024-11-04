@@ -164,6 +164,22 @@ Array.prototype.__map = function(callback, context) {
 | `$Stringify(value)`                        | Todo           | `JSON.stringify()`               |
 | `$Parse(jsonString)`                       | Todo           | `JSON.parse()`                   |
 
+Hello Devs 👋🏻
+`If you want to contribute you are always Welcome !! Come and Contribute Here > 3 💗🫠`
+## Project SetUp
+First Clone The Repo
+```bash
+git clone https://github.com/Rudrajiii/Js-Internals
+```
+Then Move To Project Directory
+```bash
+cd Js-Internals
+```
+Now Open Your Favourite Code Editor [ Mine is Vs-Code :) So ]
+```bash
+code .
+```
+
 ## Installation ⏬
 
 To install this package, use npm:
