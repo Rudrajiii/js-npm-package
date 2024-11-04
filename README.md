@@ -39,39 +39,37 @@ Welcome to the Custom JavaScript Functions package! This npm package provides cu
 │
 ├── 📄 package.json
 ```
-## Sample Custom_map() [$map(cb)]
+## Sample Code of custom $call(context, ...args) [Same as native call()]
 ```bash
 /**
- * Array.prototype.map() - Creates a new array with the results of calling a provided function on every element in the calling array.
- * The "map()" method executes a provided function once for each array element and constructs a new array from the results.
-   It does not execute the function for empty elements. This method returns a new array and does not modify the original array.
+ * Function.prototype.call() - Calls a function with a given 'this' value and arguments provided individually.
+ * The "call()" method allows you to invoke a function with a specific 'this' context, along with arguments passed individually. It is useful when you want to change the context ('this') for a particular function invocation.
  * @syntax :
- * @array.map(callback(currentValue, index, array), thisArg);
+ * @function.call(thisArg, arg1, arg2, ..., argN);
 
- * @callback: A function that is called for every element of the array. It takes three arguments:
- * @index (Optional): The index of the current element being processed in the array.
- * @array (Optional): The array "map" was called upon.
- * @thisArg (Optional): Value to use as "this" when executing "callback".
+ * @thisArg : The value to use as 'this' when calling the function. If 'thisArg' is 'null' or 'undefined', it will default to the global object ('globalThis' in non-strict mode).
+ * @arg1 , arg2, ..., argN: Individual arguments to pass to the function.
 
  * @returns:
- * A new array with each element being the result of the callback function.
+ * The result of calling the function with the provided 'this' value and arguments.
 **/
 
-const __call = require('./_call');
-
-Array.prototype.__push = function(element) {
-    this[this.length] = element;
-    return this.length;
-};
-
-Array.prototype.__map = function(callback, context) {
-    const temp = [];
-
-    for (let i = 0; i < this.length; i++) {
-        const result = callback.__call(context, this[i], i, this); 
-        temp.__push(result);
+Function.prototype.__call = function(context, ...args) {
+    if (typeof this !== "function") {
+        throw new Error(this + " is not a function.");
     }
-    return temp;
+
+    if (context === undefined || context === null) {
+        return this.apply(globalThis, args);
+    }
+
+    const boundContext = Object(context);
+
+    boundContext.func = this;
+    const result = boundContext.func(...args);
+    delete boundContext.func;
+
+    return result;
 };
 
 ```
