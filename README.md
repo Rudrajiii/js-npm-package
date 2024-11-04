@@ -39,16 +39,12 @@ Welcome to the Custom JavaScript Functions package! This npm package provides cu
 │
 ├── 📄 package.json
 ```
-## Progress ✨ ~
-![image](https://github.com/user-attachments/assets/3a02bbdf-7990-40f7-8c1b-fabc8d90db19)
-
-
 ## Sample Custom_map() [$map(cb)]
-bash```
-
+```bash
 /**
  * Array.prototype.map() - Creates a new array with the results of calling a provided function on every element in the calling array.
- * The "map()" method executes a provided function once for each array element and constructs a new array from the results. It does not execute the function for empty elements. This method returns a new array and does not modify the original array.
+ * The "map()" method executes a provided function once for each array element and constructs a new array from the results.
+   It does not execute the function for empty elements. This method returns a new array and does not modify the original array.
  * @syntax :
  * @array.map(callback(currentValue, index, array), thisArg);
 
@@ -60,6 +56,7 @@ bash```
  * @returns:
  * A new array with each element being the result of the callback function.
 **/
+
 const __call = require('./_call');
 
 Array.prototype.__push = function(element) {
@@ -78,6 +75,13 @@ Array.prototype.__map = function(callback, context) {
 };
 
 ```
+
+
+## Progress ✨ ~
+![image](https://github.com/user-attachments/assets/3a02bbdf-7990-40f7-8c1b-fabc8d90db19)
+
+
+
 
 ## Available Functions 🚀
 
