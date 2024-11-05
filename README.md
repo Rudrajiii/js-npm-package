@@ -168,6 +168,67 @@ Function.prototype.__call = function(context, ...args) {
 
 Hello Devs 👋🏻
 `If you want to contribute you are always Welcome !! Come and Contribute Here > 3 💗🫠`
+## Contribution Rule's
+- maintain existing file naming convension (eg. _file.js)
+- maintain existing code format for Contribution
+- ensure you write all the import tests for that func maintaining the proper format (eg. test_funcName.js)
+- demo test file for custom func `$call()`
+
+```bash
+const { __call } = require('../package/src/internal-custom-functions/Array_Object/Static_Methods/_call');
+
+function deepEqual(obj1, obj2) {
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
+}
+
+// Run tests for the custom __call method
+const tests = [
+    {
+        description: 'Basic Function Call with Context',
+        func: function(greeting, punctuation) { return `${greeting}, ${this.name}${punctuation}`; },
+        context: { name: 'Alice' },
+        args: ['Hello', '!'],
+        expected: 'Hello, Alice!',
+        testNumber: 0
+    },
+    {
+        description: 'Function with No Context',
+        func: function(num1, num2) { return num1 + num2; },
+        context: undefined,
+        args: [5, 10],
+        expected: 15,
+        testNumber: 1
+    }
+    //Write atleast 7-8 proper test cases.
+];
+
+// Run the tests
+tests.forEach(test => {
+    let result;
+    let errorOccurred = false;
+    try {
+        result = test.func.__call(test.context, ...test.args);
+    } catch (error) {
+        if (test.expectedError) {
+            errorOccurred = true;
+            console.log(`Passed Test${test.testNumber} ✅: ${test.description}`);
+        } else {
+            console.log(`Failed Test${test.testNumber} ❌: ${test.description}`);
+            console.error('Unexpected Error:', error);
+        }
+    }
+
+    if (!errorOccurred && deepEqual(result, test.expected)) {
+        console.log(`Passed Test${test.testNumber} ✅: ${test.description}`);
+    } else if (!errorOccurred) {
+        console.log(`Failed Test${test.testNumber} ❌: ${test.description}`);
+        console.log(`Expected: ${JSON.stringify(test.expected)}`);
+        console.log(`Actual: ${JSON.stringify(result)}`);
+    }
+});
+
+```
+
 ## Project SetUp
 First Clone The Repo
 ```bash
