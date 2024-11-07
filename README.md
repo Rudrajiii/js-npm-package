@@ -90,6 +90,9 @@ Function.prototype.__call = function(context, ...args) {
 | `$Map(array, callback)`                    | Implemented    | `Array.prototype.map()`       |
 | `$Filter(array, callback)`                 | Implemented    | `Array.prototype.filter()`    |
 | `$Reduce(array, callback, initialValue)`   | Implemented    | `Array.prototype.reduce()`    |
+| `$Array.from(value)`                       | Implemented    | `Array.from()`                |
+| `$Array.isArray(array)`                    | Implemented    | `Array.isArray()`             |
+| `$Array.of(value)`                         | Implemented    | `Array.of()`                  |
 | `$ForEach(array, callback)`                | Todo           | `Array.prototype.forEach()`   |
 | `$Some(array, callback)`                   | Todo           | `Array.prototype.some()`      |
 | `$Every(array, callback)`                  | Todo           | `Array.prototype.every()`     |
@@ -102,9 +105,6 @@ Function.prototype.__call = function(context, ...args) {
 | `$Slice(array, start, end)`                | Todo           | `Array.prototype.slice()`     |
 | `$Concat(array, ...arrays)`                | Todo           | `Array.prototype.concat()`    |
 | `$Join(array, separator)`                   | Todo          | `Array.prototype.join()`      |
-| `$Array.isArray(array)`                    | Implemented    | `Array.isArray()`             |
-| `$Array.of(value)`                         | Implemented    | `Array.of()`                  |
-| `$Array.from(value)`                       | Implemented    | `Array.from()`                |
 
 ### String Methods
 

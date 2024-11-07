@@ -48,6 +48,9 @@ console.log(Array.$of('foo', 2, 'bar', true));
 console.log(Array.$of());
 // Expected output: Array []
 
+//* Test For $forEach(cb)
+numbers.$forEach((num) => console.log(num / 2));
+
 console.log('Map internals:', INTERNAL.map_internals());
 console.log('Filter internals:', INTERNAL.filter_internals());
 console.log('Reduce internals:', INTERNAL.reduce_internals());
@@ -57,3 +60,4 @@ console.log('From internals:', INTERNAL.from_internals());
 console.log('IsArray internals:', INTERNAL.isArray_internals());
 console.log('Of internals:', INTERNAL.of_internals());
 console.log('Set DS' , INTERNAL.set_internals());
+console.log('forEach internals:' , INTERNAL.forEach_internals());

@@ -37,6 +37,7 @@ run_test "test_apply.js"
 run_test "test_from.js"
 run_test "test_isArray.js"
 run_test "test_of.js"
+run_test "test_forEach.js"
 
 # Print the results in a stylish table format
 echo "========================================="

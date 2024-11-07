@@ -5,8 +5,7 @@
  *
  * @param {...*} items - The items to include in the new Array.
  * @returns {Array} - A new Array instance containing the provided items.
- **/
-require('./_from');
+ **/require('./_from');
 Function.prototype.__of = function(...args) {
     return Array.__from(args);
 };
