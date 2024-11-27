@@ -28,7 +28,7 @@ run_test() {
 # Array to store results
 results=()
 
-# Run the test files
+# Run the test files for instance methods
 run_test "test_map.js"
 run_test "test_filter.js"
 run_test "test_reduce.js"

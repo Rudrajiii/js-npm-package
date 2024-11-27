@@ -28,7 +28,7 @@ run_test() {
 # Array to store results
 results=()
 
-# Run the test files
+# Run the test files for static methods
 run_test "test_call.js"
 run_test "test_apply.js"
 run_test "test_from.js"
