@@ -93,8 +93,8 @@ Function.prototype.__call = function(context, ...args) {
 | `$Array.from(value)`                       | Implemented    | `Array.from()`                |
 | `$Array.isArray(array)`                    | Implemented    | `Array.isArray()`             |
 | `$Array.of(value)`                         | Implemented    | `Array.of()`                  |
-| `$ForEach(array, callback)`                | Todo           | `Array.prototype.forEach()`   |
-| `$Some(array, callback)`                   | Todo           | `Array.prototype.some()`      |
+| `$ForEach(array, callback)`                | Implemented           | `Array.prototype.forEach()`   |
+| `$Some(array, callback)`                   | Implemented           | `Array.prototype.some()`      |
 | `$Every(array, callback)`                  | Todo           | `Array.prototype.every()`     |
 | `$Find(array, callback)`                   | Todo           | `Array.prototype.find()`      |
 | `$IndexOf(array, element)`                 | Todo           | `Array.prototype.indexOf()`   |
