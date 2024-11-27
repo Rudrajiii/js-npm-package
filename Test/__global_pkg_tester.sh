@@ -38,10 +38,11 @@ run_test "test_from.js"
 run_test "test_isArray.js"
 run_test "test_of.js"
 run_test "test_forEach.js"
+run_test "test_some.js"
 
 # Print the results in a stylish table format
 echo "========================================="
-echo "          Test Results                  "
+echo "          Test Results                   "
 echo "========================================="
 printf "%-20s | %-5s | %-10s\n" "Test Name" "Result" "Time Taken"
 echo "-----------------------------------------"
